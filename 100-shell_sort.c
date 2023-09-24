@@ -27,23 +27,23 @@ void int_swap(int *a, int *b)
 
 void shell_sort(int *array, size_t size)
 {
-	size_t gap, i, j;
+	size_t space, i, j;
 
 	if (array == NULL || size < 2)
 		return;
 
-	for (gap = 1; gap < (size / 3);)
-		gap = gap * 3 + 1;
+	for (space = 1; space < (size / 3);)
+		space = space * 3 + 1;
 
-	for (; gap >= 1; gap /= 3)
+	for (; space >= 1; space /= 3)
 	{
-		for (i = gap; i < size; i++)
+		for (i = space; i < size; i++)
 		{
 			j = i;
-			while (j >= gap && array[j - gap] > array[j])
+			while (j >= space && array[j - space] > array[j])
 			{
-				int_swap(array + j, array + (j - gap));
-				j -= gap;
+				int_swap(array + j, array + (j - space));
+				j -= space;
 			}
 		}
 		print_array(array, size);
