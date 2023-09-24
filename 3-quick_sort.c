@@ -5,15 +5,20 @@
  * @array: the array
  * @i: the first index
  * @j: the second index
+ * @size: the size of the array
  *
  * Return: void
  */
-void swap(int *array, int i, int j)
+void swap(int *array, int i, int j, size_t size)
 {
 	int tmp = array[i];
 
-	array[i] = array[j];
-	array[j] = tmp;
+	if (i != j)
+	{
+		array[i] = array[j];
+		array[j] = tmp;
+		print_array(array, size);
+	}
 }
 
 /**
@@ -31,21 +36,10 @@ int partition(int *array, int lo, int hi, size_t size)
 	int i = lo;
 	int j = lo;
 
-	for (j = lo; j <= hi; j++)
-	{
+	for (j = lo; j < hi; j++)
 		if (array[j] < pivot)
-		{
-			if (i != j)
-			{
-				swap(array, i, j);
-				print_array(array, size);
-			}
-			i++;
-		}
-	}
-	swap(array, i, hi);
-	if (i != hi)
-		print_array(array, size);
+			swap(array, i++, j, size);
+	swap(array, i, hi, size);
 	return (i);
 }
 
