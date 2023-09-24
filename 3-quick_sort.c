@@ -79,5 +79,7 @@ void quicksort(int *array, int lo, int hi, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
+	if (!array || !size)
+		return;
 	quicksort(array, 0, size - 1, size);
 }
