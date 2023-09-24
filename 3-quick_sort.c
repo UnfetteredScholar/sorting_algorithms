@@ -6,7 +6,7 @@
  * @i: the first index
  * @j: the second index
  * @size: the size of the array
- * 
+ *
  * Return: void
  */
 void swap(int *array, int i, int j, size_t size)
