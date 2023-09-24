@@ -32,6 +32,9 @@ void insertion_sort_list(listint_t **list)
 	listint_t *min = NULL, *h = *list;
 	int *tmp;
 
+
+	if (h == NULL || h->next == NULL)
+		return;
 	min = malloc(sizeof(listint_t));
 	min->prev = NULL;
 	min->next = h;
