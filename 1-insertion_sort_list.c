@@ -29,12 +29,13 @@ void swap_back(listint_t *node)
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *min = NULL, *h = *list;
+	listint_t *min = NULL, *h = NULL;
 	int *tmp;
 
 
-	if (h == NULL || h->next == NULL)
+	if (!list || !*list || !(*list)->next)
 		return;
+	h = *list;
 	min = malloc(sizeof(listint_t));
 	min->prev = NULL;
 	min->next = h;
