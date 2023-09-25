@@ -31,7 +31,7 @@ void merge_sub_arr(int *subarr, int *buff, size_t front, size_t mid,
 		buff[k++] = subarr[i];
 	for (; j < back; j++)
 		buff[k++] = subarr[j];
-	for (i = front, k =0; i < back; i++)
+	for (i = front, k = 0; i < back; i++)
 		subarr[i] = buff[k++];
 
 	printf("[Done]: ");
@@ -75,7 +75,6 @@ void merge_sort(int *array, size_t size)
 
 	if (array == NULL || size < 2)
 		return;
-	
 	buff = malloc(sizeof(int) * size);
 	if (buff == NULL)
 		return;
